@@ -1,13 +1,6 @@
 import { Card } from "@/components/ui/card";
-import alteryxLogo from "@/assets/alteryx-logo.jpg";
-import databricksLogo from "@/assets/databricks.png";
 
 export const Skills = () => {
-  const technologies = [
-    { name: "Alteryx", logo: alteryxLogo },
-    { name: "Databricks", logo: databricksLogo },
-  ];
-
   const skillCategories = [
     {
       title: "Analysis & Visualization",
@@ -22,8 +15,8 @@ export const Skills = () => {
       skills: ["Databricks", "Snowflake", "dbt cloud", "AWS (Redshift, S3, Airflow)", "Azure (ADF, Synapse)"]
     },
     {
-      title: "AI/ML & Certifications",
-      skills: ["LLM/API Integration", "RAG", "LangChain", "scikit-learn", "PyTorch", "TensorFlow", "Vector DBs", "Databricks Data Engineer Associate", "Alteryx Designer Core"]
+      title: "AI/ML Technologies",
+      skills: ["LLM/API Integration", "RAG", "LangChain", "scikit-learn", "PyTorch", "TensorFlow", "Vector DBs"]
     }
   ];
 
@@ -33,22 +26,6 @@ export const Skills = () => {
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center glow-text">
           Skills & Technologies
         </h2>
-
-        {/* Featured Technologies */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {technologies.map((tech) => (
-            <Card 
-              key={tech.name}
-              className="bg-card/50 backdrop-blur-sm border-border p-8 card-glow hover:scale-105 transition-transform"
-            >
-              <img 
-                src={tech.logo} 
-                alt={tech.name}
-                className="h-16 object-contain mx-auto"
-              />
-            </Card>
-          ))}
-        </div>
 
         {/* Skill Categories */}
         <div className="grid md:grid-cols-2 gap-6">
