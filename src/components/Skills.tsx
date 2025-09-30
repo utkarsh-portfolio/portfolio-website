@@ -10,20 +10,20 @@ export const Skills = () => {
 
   const skillCategories = [
     {
-      title: "Data Analytics",
-      skills: ["Python", "R", "SQL", "Tableau", "Power BI", "Excel"]
+      title: "Analysis & Visualization",
+      skills: ["MS Excel", "Tableau", "Power BI", "Alteryx", "Streamlit", "Pandas", "NumPy", "Visio"]
     },
     {
-      title: "Machine Learning",
-      skills: ["Scikit-learn", "TensorFlow", "PyTorch", "NLP", "Computer Vision"]
+      title: "Programming Languages",
+      skills: ["SQL (Oracle, SQL Server)", "Python", "R", "SAS", "PySpark", "Airflow"]
     },
     {
-      title: "Cloud & Tools",
-      skills: ["AWS", "Azure", "Git", "Docker", "Jupyter", "VS Code"]
+      title: "Cloud Platforms & Databases",
+      skills: ["Databricks", "Snowflake", "dbt cloud", "AWS (Redshift, S3, Airflow)", "Azure (ADF, Synapse)"]
     },
     {
-      title: "Business Intelligence",
-      skills: ["Data Modeling", "ETL", "Data Warehousing", "Dashboard Design"]
+      title: "AI/ML & Certifications",
+      skills: ["LLM/API Integration", "RAG", "LangChain", "scikit-learn", "PyTorch", "TensorFlow", "Vector DBs", "Databricks Data Engineer Associate", "Alteryx Designer Core"]
     }
   ];
 

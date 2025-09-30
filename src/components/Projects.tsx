@@ -5,6 +5,13 @@ import { Github, ExternalLink } from "lucide-react";
 export const Projects = () => {
   const projects = [
     {
+      title: "Home Insurance Analytics Platform",
+      description: "Comprehensive data warehouse solution integrating FEMA, NOAA, Census, and Redfin APIs through ELT processes. Built interactive operational dashboards enabling sales team optimization, reducing market analysis turnaround from 5 days to 2 days.",
+      technologies: ["Python", "Tableau", "Gen AI", "ETL", "Data Modeling"],
+      github: null,
+      link: null
+    },
+    {
       title: "Healthy-U Calories",
       description: "Agentic AI application that calculates calories in food and suggests healthy alternatives for ingredients. Built with advanced AI models to provide personalized nutrition recommendations.",
       technologies: ["Python", "AI/ML", "NLP", "Web App"],

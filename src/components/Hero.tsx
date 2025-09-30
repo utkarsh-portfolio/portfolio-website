@@ -41,8 +41,11 @@ export const Hero = () => {
         <h1 className="text-5xl md:text-7xl font-bold mb-6 glow-text">
           Utkarsh Pathak
         </h1>
-        <p className="text-xl md:text-2xl mb-4 text-muted-foreground">
-          Data Analyst | AI Enthusiast | Business Intelligence
+        <p className="text-xl md:text-2xl mb-4 text-primary">
+          Data Analyst | AI & Data Engineering | Business Analytics
+        </p>
+        <p className="text-md md:text-lg mb-4 text-muted-foreground">
+          📍 Tempe, Arizona | 📧 workwithutkarsh22@gmail.com | 📞 (602) 218-0453
         </p>
         <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-muted-foreground">
           Transforming data into actionable insights with advanced analytics and machine learning

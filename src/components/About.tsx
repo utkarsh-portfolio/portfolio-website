@@ -11,20 +11,20 @@ export const About = () => {
         <Card className="bg-card/50 backdrop-blur-sm border-border p-8 card-glow">
           <div className="space-y-6 text-lg text-muted-foreground">
             <p>
-              I'm a passionate Data Analyst with a strong foundation in business intelligence, 
-              machine learning, and AI-driven solutions. My expertise spans across various 
-              analytical tools and programming languages, enabling me to extract meaningful 
-              insights from complex datasets.
+              I'm a Data Analyst and AI & Data Engineering professional with a Master's in Business Analytics 
+              from the University of Arizona's Eller College of Management (GPA: 3.85/4.00, Dean's List). 
+              My expertise spans business intelligence, machine learning, and cloud-based data solutions.
             </p>
             <p>
-              With experience at leading organizations like Deloitte, I've developed end-to-end 
-              data solutions that drive business decisions. My work combines technical prowess 
-              with strategic thinking to deliver impactful results.
+              With nearly 4 years at Deloitte Consulting, I've guided Fortune 100 executives in architecting 
+              data modernization strategies and built real-time pipelines integrating Oracle, SAP, and payment APIs. 
+              I've led complex data cloud migrations using AWS services, reducing report latency by 40% while 
+              maintaining 99.9% uptime.
             </p>
             <p>
-              I'm particularly interested in leveraging AI and machine learning to solve 
-              real-world problems, from health analytics to automated research systems. 
-              My goal is to make data accessible and actionable for everyone.
+              Currently pursuing opportunities in data engineering and analytics, I'm passionate about leveraging 
+              AI/ML, cloud platforms (Databricks, Snowflake, AWS, Azure), and advanced analytics to transform 
+              complex data into actionable insights that drive strategic business decisions.
             </p>
           </div>
         </Card>

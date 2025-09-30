@@ -7,30 +7,47 @@ import nagpurLogo from "@/assets/nagpur-university.png";
 export const Experience = () => {
   const experiences = [
     {
-      company: "Deloitte",
-      logo: deloitteLogo,
-      role: "Data Analyst",
+      company: "Featured (Terkel Inc.)",
+      logo: featuredLogo,
+      role: "Software Engineer Intern – Data Science",
+      period: "July 2025 – September 2025",
+      location: "Scottsdale, Arizona",
       type: "experience"
     },
     {
-      company: "Featured",
-      logo: featuredLogo,
-      role: "Analytics Consultant",
+      company: "University of Arizona",
+      logo: uaLogo,
+      role: "Student Worker, Planning & Operations",
+      period: "October 2024 – May 2025",
+      location: "Phoenix, Arizona",
+      type: "experience"
+    },
+    {
+      company: "Deloitte Consulting",
+      logo: deloitteLogo,
+      role: "Analyst, AI & Data Engineering Practice",
+      period: "January 2021 – August 2024",
+      location: "Hyderabad, India",
       type: "experience"
     }
   ];
 
   const education = [
     {
-      institution: "University of Arizona",
+      institution: "University of Arizona, Eller College of Management",
       logo: uaLogo,
-      degree: "Master's Degree",
+      degree: "Master of Science in Business Analytics",
+      details: "Dean's List | GPA: 3.85/4.00",
+      period: "May 2025",
+      location: "Chandler, Arizona",
       type: "education"
     },
     {
-      institution: "Nagpur University",
+      institution: "Rashtrasant Tukdoji Maharaj Nagpur University",
       logo: nagpurLogo,
-      degree: "Bachelor's Degree",
+      degree: "Bachelor of Computer Application",
+      period: "November 2020",
+      location: "Nagpur, India",
       type: "education"
     }
   ];
@@ -64,8 +81,11 @@ export const Experience = () => {
                       <h4 className="text-xl font-semibold text-foreground">
                         {exp.company}
                       </h4>
-                      <p className="text-muted-foreground">
+                      <p className="text-muted-foreground font-medium">
                         {exp.role}
+                      </p>
+                      <p className="text-sm text-muted-foreground/80">
+                        {exp.period} | {exp.location}
                       </p>
                     </div>
                   </div>
@@ -95,8 +115,16 @@ export const Experience = () => {
                       <h4 className="text-xl font-semibold text-foreground">
                         {edu.institution}
                       </h4>
-                      <p className="text-muted-foreground">
+                      <p className="text-muted-foreground font-medium">
                         {edu.degree}
+                      </p>
+                      {edu.details && (
+                        <p className="text-sm text-primary">
+                          {edu.details}
+                        </p>
+                      )}
+                      <p className="text-sm text-muted-foreground/80">
+                        {edu.period} | {edu.location}
                       </p>
                     </div>
                   </div>

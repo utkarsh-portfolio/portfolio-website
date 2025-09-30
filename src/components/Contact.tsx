@@ -40,6 +40,18 @@ export const Contact = () => {
             I'm always interested in hearing about new opportunities, collaborations, 
             or just connecting with fellow data enthusiasts. Feel free to reach out!
           </p>
+          
+          <div className="mb-8 space-y-2">
+            <p className="text-lg text-foreground">
+              📧 <a href="mailto:workwithutkarsh22@gmail.com" className="text-primary hover:underline">workwithutkarsh22@gmail.com</a>
+            </p>
+            <p className="text-lg text-foreground">
+              📞 <a href="tel:+16022180453" className="text-primary hover:underline">(602) 218-0453</a>
+            </p>
+            <p className="text-lg text-foreground">
+              📍 Tempe, Arizona
+            </p>
+          </div>
 
           <div className="flex flex-wrap gap-4 justify-center mb-8">
             {socialLinks.map((link) => {
