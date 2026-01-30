@@ -433,6 +433,116 @@
             box-shadow: 0 25px 70px rgba(99, 102, 241, 0.4);
         }
 
+        /* Featured Project Card */
+        .featured-project {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(168, 85, 247, 0.1) 100%);
+            border: 2px solid rgba(99, 102, 241, 0.4);
+            padding: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .featured-project:hover {
+            transform: translateY(-10px);
+            border-color: #a855f7;
+        }
+
+        .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .featured-project .project-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .featured-project .project-desc {
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        .featured-metrics {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .featured-visual {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 280px;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.4);
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 50px rgba(99, 102, 241, 0.6);
+        }
+
+        .play-button svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+            margin-left: 4px;
+        }
+
+        .demo-text {
+            color: #cbd5e1;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
         .project-title {
             font-size: 24px;
             color: #6366f1;
@@ -442,13 +552,59 @@
             z-index: 1;
         }
 
+        .project-type {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #a855f7;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
         .project-desc {
             color: #e2e8f0;
             line-height: 1.7;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             font-size: 15px;
             position: relative;
             z-index: 1;
+        }
+
+        .project-impact {
+            color: #10b981;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tech-badge {
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            transition: all 0.3s;
+        }
+
+        .tech-badge:hover {
+            background: rgba(99, 102, 241, 0.4);
+            border-color: #6366f1;
         }
 
         .project-link {
@@ -466,6 +622,33 @@
         .project-link:hover {
             color: #ec4899;
             gap: 12px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .featured-project {
+                grid-template-columns: 1fr;
+                padding: 30px;
+            }
+
+            .featured-project .project-title {
+                font-size: 24px;
+            }
+
+            .featured-metrics {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .featured-visual {
+                min-height: 200px;
+            }
         }
 
         .skills-container {
@@ -723,53 +906,127 @@
     <section id="projects">
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
+
+            <!-- Featured Project - Property Maintenance Platform -->
+            <div class="project-card featured-project">
+                <div class="featured-content">
+                    <div class="featured-badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        Freelance Project
+                    </div>
+                    <div class="project-title">Property Maintenance Platform</div>
+                    <div class="project-desc">
+                        End-to-end property maintenance solution enabling tenants to submit repair requests, track status in real-time, and communicate with property managers. Built with modern tech stack featuring automated notifications and smart request routing.
+                    </div>
+                    <div class="featured-metrics">
+                        <div class="metric">
+                            <div class="metric-value">60%</div>
+                            <div class="metric-label">Faster Response</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Real-time</div>
+                            <div class="metric-label">Status Tracking</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Auto</div>
+                            <div class="metric-label">Notifications</div>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">FastAPI</span>
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">AWS</span>
+                    </div>
+                    <a href="https://www.loom.com/share/c7eaecbe880c4de8b4700ca06a2fd751" target="_blank" class="project-link">
+                        Watch Demo →
+                    </a>
+                </div>
+                <a href="https://www.loom.com/share/c7eaecbe880c4de8b4700ca06a2fd751" target="_blank" class="featured-visual">
+                    <div class="play-button">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <span class="demo-text">Watch Live Demo</span>
+                </a>
+            </div>
+
+            <!-- Project 2 - Healthy-U Calories -->
             <div class="project-card">
-                <div class="project-title">🍎 Healthy-U Calories</div>
+                <div class="project-type">AI Agent</div>
+                <div class="project-title">Healthy-U Calories</div>
                 <div class="project-desc">
-                    AI agent that analyzes food calories and suggests healthier ingredient alternatives
+                    Intelligent AI agent that analyzes food images to calculate calories and nutritional content, then suggests healthier ingredient alternatives for better dietary choices.
+                </div>
+                <div class="project-impact">Personalized nutrition recommendations</div>
+                <div class="tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">LangChain</span>
+                    <span class="tech-badge">OpenAI</span>
+                    <span class="tech-badge">Streamlit</span>
                 </div>
                 <a href="https://github.com/utkarsh-portfolio/healthy-u-calories" target="_blank" class="project-link">
-                    View Project →
+                    View on GitHub →
                 </a>
             </div>
 
+            <!-- Project 3 - AI Research Agent -->
             <div class="project-card">
-                <div class="project-title">📝 AI Research Agent</div>
+                <div class="project-type">Autonomous Agent</div>
+                <div class="project-title">AI Research & Writing Agent</div>
                 <div class="project-desc">
-                    Autonomous agent that researches tech trends and writes compelling articles
+                    Autonomous multi-agent system that researches trending tech topics, synthesizes information from multiple sources, and generates well-structured, compelling articles.
+                </div>
+                <div class="project-impact">Automated content generation pipeline</div>
+                <div class="tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">CrewAI</span>
+                    <span class="tech-badge">LangChain</span>
+                    <span class="tech-badge">GPT-4</span>
                 </div>
                 <a href="https://github.com/utkarsh-portfolio/AI-Agent-for-Research-And-Writing" target="_blank" class="project-link">
-                    View Project →
+                    View on GitHub →
                 </a>
             </div>
 
+            <!-- Project 4 - IMDB Data Visualization -->
             <div class="project-card">
-                <div class="project-title">🏥 Healthcare ML</div>
+                <div class="project-type">Data Visualization</div>
+                <div class="project-title">IMDB Movies Data Analysis</div>
                 <div class="project-desc">
-                    Predicts doctor visit patterns for patients 65+ using advanced ML models
+                    Comprehensive Tableau dashboard analyzing IMDB movie data - uncovering trends in ratings, genres, box office performance, and directorial success patterns over decades.
                 </div>
-                <a href="https://github.com/utkarsh-portfolio/National-Public-Health-Authority" target="_blank" class="project-link">
-                    View Project →
-                </a>
-            </div>
-
-            <div class="project-card">
-                <div class="project-title">💳 Credit Card Analytics</div>
-                <div class="project-desc">
-                    Interactive Tableau dashboards for customer behavior insights
+                <div class="project-impact">Interactive insights from 10K+ movies</div>
+                <div class="tech-stack">
+                    <span class="tech-badge">Tableau</span>
+                    <span class="tech-badge">SQL</span>
+                    <span class="tech-badge">Data Analysis</span>
+                    <span class="tech-badge">Python</span>
                 </div>
-                <a href="https://public.tableau.com/app/profile/utkarsh.pathak4808/viz/creditcard_17331126738590/ExploratoryDashboard" target="_blank" class="project-link">
+                <a href="https://public.tableau.com/app/profile/utkarsh.pathak4808/viz/IMDBMoviesDataAnalysis_17697918163410/DataMoviesIMDbDashboard" target="_blank" class="project-link">
                     View Dashboard →
                 </a>
             </div>
 
+            <!-- Project 5 - Insurance Risk Assessment -->
             <div class="project-card">
-                <div class="project-title">🏠 Insurance Data Warehouse</div>
+                <div class="project-type">Data Engineering</div>
+                <div class="project-title">Property & Insurance Risk Platform</div>
                 <div class="project-desc">
-                    Integrated multi-source APIs reducing analysis time from 5 days to 2 days
+                    Integrated platform combining property data with insurance risk models. Built data pipelines to aggregate multi-source APIs, enabling faster and more accurate risk assessments.
                 </div>
-                <div style="color: #94a3b8; font-size: 14px; margin-top: 10px; font-weight: 500;">Python • Tableau • Gen AI</div>
+                <div class="project-impact">Reduced analysis time from 5 days to 2 days</div>
+                <div class="tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Airflow</span>
+                    <span class="tech-badge">Snowflake</span>
+                    <span class="tech-badge">Tableau</span>
+                </div>
+                <span class="project-link" style="color: #64748b; cursor: default;">
+                    Enterprise Project
+                </span>
             </div>
+
         </div>
     </section>
 
@@ -879,3 +1136,8 @@
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 16.057v-3.057h2.994c-.059 1.143-.212 2.24-.456 3.279-.823-.12-1.674-.188-2.538-.222zm1.957 2.162c-.499 1.33-1.159 2.497-1.957 3.456v-3.62c.666.028 1.319.081 1.957.164zm-1.957-7.219v-3.015c.868-.034 1.721-.103 2.548-.224.238 1.027.389 2.111.446 3.239h-2.994zm0-5.014v-3.661c.806.969 1.471 2.15 1.971 3.496-.642.084-1.3.137-1.971.165zm2.703-3.267c1.237.496 2.354 1.228 3.29 2.146-.642.234-1.311.442-2.019.607-.344-.992-.775-1.91-1.271-2.753zm-7.241 13.56c-.244-1.039-.398-2.136-.456-3.279h2.994v3.057c-.865.034-1.714.102-2.538.222zm2.538 1.776v3.62c-.798-.959-1.458-2.126-1.957-3.456.638-.083 1.291-.136 1.957-.164zm-2.994-7.055c.057-1.128.207-2.212.446-3.239.827.121 1.68.19 2.548.224v3.015h-2.994zm1.024-5.179c.5-1.346 1.165-2.527 1.97-3.496v3.661c-.671-.028-1.329-.081-1.97-.165zm-2.005-.35c-.708-.165-1.377-.373-2.018-.607.937-.918 2.053-1.65 3.29-2.146-.496.844-.927 1.762-1.272 2.753zm-.549 1.918c-.264 1.151-.434 2.36-.492 3.611h-3.933c.165-1.658.739-3.197 1.617-4.518.88.361 1.816.67 2.808.907zm.009 9.262c-.988.236-1.92.542-2.797.9-.89-1.328-1.471-2.879-1.637-4.551h3.934c.058 1.265.231 2.488.5 3.651zm.553 1.917c.342.976.768 1.881 1.257 2.712-1.223-.49-2.326-1.211-3.256-2.115.636-.229 1.299-.435 1.999-.597zm9.924 0c.7.163 1.362.367 1.999.597-.931.903-2.034 1.625-3.257 2.116.489-.832.915-1.737 1.258-2.713zm.553-1.917c.27-1.163.442-2.386.501-3.651h3.934c-.167 1.672-.748 3.223-1.638 4.551-.877-.358-1.81-.664-2.797-.9zm.501-5.651c-.058-1.251-.229-2.46-.492-3.611.992-.237 1.929-.546 2.809-.907.877 1.321 1.451 2.86 1.616 4.518h-3.933z"/></svg>
                 </a>
             </div>
+        </div>
+    </section>
+
+</body>
+</html>
