@@ -1,0 +1,34 @@
+{
+  "displayName": "Check Eligibility",
+  "entryFulfillment": {
+    "messages": [
+      {
+        "text": {
+          "text": [
+            "Let me check your eligibility based on the information provided..."
+          ]
+        }
+      }
+    ],
+    "webhook": "loan-eligibility-webhook",
+    "tag": "check_eligibility"
+  },
+  "transitionRoutes": [
+    {
+      "condition": "$session.params.eligibility_status = 'eligible'",
+      "targetPage": "Eligible Result"
+    },
+    {
+      "condition": "$session.params.eligibility_status = 'conditionally_eligible'",
+      "targetPage": "Conditional Result"
+    },
+    {
+      "condition": "$session.params.eligibility_status = 'needs_review'",
+      "targetPage": "Review Required Result"
+    },
+    {
+      "condition": "$session.params.eligibility_status = 'not_eligible'",
+      "targetPage": "Not Eligible Result"
+    }
+  ]
+}

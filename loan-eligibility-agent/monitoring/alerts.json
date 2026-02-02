@@ -1,0 +1,49 @@
+{
+  "alerts": [
+    {
+      "name": "High Error Rate",
+      "description": "Triggers when error rate exceeds threshold",
+      "search": "index=main sourcetype=json source=\"loan-eligibility-agent\" level=ERROR earliest=-15m | stats count as errors | where errors > 10",
+      "trigger_condition": "Number of Results > 0",
+      "severity": "high",
+      "actions": ["email", "slack"],
+      "throttle": "15m"
+    },
+    {
+      "name": "High Response Time",
+      "description": "Triggers when average response time exceeds 5 seconds",
+      "search": "index=main sourcetype=json source=\"loan-eligibility-agent\" earliest=-15m | spath event.response_time_ms | stats avg(event.response_time_ms) as avg_time | where avg_time > 5000",
+      "trigger_condition": "Number of Results > 0",
+      "severity": "medium",
+      "actions": ["email"],
+      "throttle": "30m"
+    },
+    {
+      "name": "High Handoff Rate",
+      "description": "Triggers when handoff rate exceeds 20%",
+      "search": "index=main sourcetype=json source=\"loan-eligibility-agent\" earliest=-1h | spath event.handoff_reason | stats count(eval(isnotnull('event.handoff_reason'))) as handoffs, count as total | eval rate = (handoffs/total)*100 | where rate > 20",
+      "trigger_condition": "Number of Results > 0",
+      "severity": "medium",
+      "actions": ["email"],
+      "throttle": "1h"
+    },
+    {
+      "name": "Service Down",
+      "description": "Triggers when no events received for 5 minutes",
+      "search": "index=main sourcetype=json source=\"loan-eligibility-agent\" earliest=-5m | stats count | where count = 0",
+      "trigger_condition": "Number of Results > 0",
+      "severity": "critical",
+      "actions": ["email", "slack", "pagerduty"],
+      "throttle": "5m"
+    },
+    {
+      "name": "Unusual Rejection Rate",
+      "description": "Triggers when rejection rate spikes above normal",
+      "search": "index=main sourcetype=json source=\"loan-eligibility-agent\" earliest=-1h | spath event.decision | stats count(eval(event.decision=\"not_eligible\")) as rejected, count as total | eval rate = (rejected/total)*100 | where rate > 50",
+      "trigger_condition": "Number of Results > 0",
+      "severity": "low",
+      "actions": ["email"],
+      "throttle": "2h"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "displayName": "Collect Debt",
+  "entryFulfillment": {
+    "messages": [
+      {
+        "text": {
+          "text": [
+            "Almost done! What is your approximate total existing debt?\n\nThis includes:\n• Credit card balances\n• Car loans\n• Student loans\n• Other loans\n\nAn estimate is fine, or say 'none' if you have no debt."
+          ]
+        }
+      }
+    ]
+  },
+  "form": {
+    "parameters": [
+      {
+        "displayName": "existing_debt",
+        "entityType": "@sys.unit-currency",
+        "required": true,
+        "fillBehavior": {
+          "initialPromptFulfillment": {
+            "messages": [
+              {
+                "text": {
+                  "text": ["What is your total existing debt?"]
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "transitionRoutes": [
+    {
+      "intent": "debt.none",
+      "targetPage": "Confirm Details",
+      "triggerFulfillment": {
+        "setParameterActions": [
+          {
+            "parameter": "existing_debt",
+            "value": 0
+          }
+        ]
+      }
+    },
+    {
+      "condition": "$page.params.existing_debt != null",
+      "targetPage": "Confirm Details"
+    }
+  ]
+}

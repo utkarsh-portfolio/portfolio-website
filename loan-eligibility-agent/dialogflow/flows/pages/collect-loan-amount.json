@@ -1,0 +1,58 @@
+{
+  "displayName": "Collect Loan Amount",
+  "entryFulfillment": {
+    "messages": [
+      {
+        "text": {
+          "text": [
+            "Great choice! How much would you like to borrow?\n\nPlease provide the loan amount you're interested in."
+          ]
+        }
+      }
+    ]
+  },
+  "form": {
+    "parameters": [
+      {
+        "displayName": "loan_amount",
+        "entityType": "@sys.unit-currency",
+        "required": true,
+        "fillBehavior": {
+          "initialPromptFulfillment": {
+            "messages": [
+              {
+                "text": {
+                  "text": ["What loan amount are you looking for?"]
+                }
+              }
+            ]
+          },
+          "repromptEventHandlers": [
+            {
+              "event": "sys.no-match-1",
+              "triggerFulfillment": {
+                "messages": [
+                  {
+                    "text": {
+                      "text": ["I need a specific amount. For example, you can say '$25,000' or '50000 dollars'."]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "transitionRoutes": [
+    {
+      "condition": "$page.params.loan_amount != null",
+      "targetPage": "Validate Loan Amount",
+      "triggerFulfillment": {
+        "webhook": "loan-eligibility-webhook",
+        "tag": "validate_loan_amount"
+      }
+    }
+  ]
+}

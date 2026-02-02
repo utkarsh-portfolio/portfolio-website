@@ -1,0 +1,80 @@
+{
+  "displayName": "Welcome",
+  "entryFulfillment": {
+    "messages": [
+      {
+        "text": {
+          "text": [
+            "Welcome to our loan pre-qualification service! I'm here to help you understand your loan options.\n\nI can help you check your eligibility for:\n• Personal loans\n• Home loans\n• Auto loans\n• Business loans\n• Education loans\n\nWhat type of loan are you interested in today?"
+          ]
+        }
+      }
+    ]
+  },
+  "transitionRoutes": [
+    {
+      "intent": "loan.type.personal",
+      "targetPage": "Collect Loan Amount",
+      "triggerFulfillment": {
+        "setParameterActions": [
+          {
+            "parameter": "loan_type",
+            "value": "personal"
+          }
+        ]
+      }
+    },
+    {
+      "intent": "loan.type.home",
+      "targetPage": "Collect Loan Amount",
+      "triggerFulfillment": {
+        "setParameterActions": [
+          {
+            "parameter": "loan_type",
+            "value": "home"
+          }
+        ]
+      }
+    },
+    {
+      "intent": "loan.type.auto",
+      "targetPage": "Collect Loan Amount",
+      "triggerFulfillment": {
+        "setParameterActions": [
+          {
+            "parameter": "loan_type",
+            "value": "auto"
+          }
+        ]
+      }
+    },
+    {
+      "intent": "loan.type.business",
+      "targetPage": "Collect Loan Amount",
+      "triggerFulfillment": {
+        "setParameterActions": [
+          {
+            "parameter": "loan_type",
+            "value": "business"
+          }
+        ]
+      }
+    },
+    {
+      "intent": "loan.type.education",
+      "targetPage": "Collect Loan Amount",
+      "triggerFulfillment": {
+        "setParameterActions": [
+          {
+            "parameter": "loan_type",
+            "value": "education"
+          }
+        ]
+      }
+    },
+    {
+      "intent": "request.human.agent",
+      "targetPage": "Human Handoff"
+    }
+  ]
+}

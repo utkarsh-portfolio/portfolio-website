@@ -1,0 +1,58 @@
+{
+  "displayName": "Collect Income",
+  "entryFulfillment": {
+    "messages": [
+      {
+        "text": {
+          "text": [
+            "Now, let's look at your financial situation.\n\nWhat is your approximate annual income before taxes?"
+          ]
+        }
+      }
+    ]
+  },
+  "form": {
+    "parameters": [
+      {
+        "displayName": "annual_income",
+        "entityType": "@sys.unit-currency",
+        "required": true,
+        "fillBehavior": {
+          "initialPromptFulfillment": {
+            "messages": [
+              {
+                "text": {
+                  "text": ["What is your annual income?"]
+                }
+              }
+            ]
+          },
+          "repromptEventHandlers": [
+            {
+              "event": "sys.no-match-1",
+              "triggerFulfillment": {
+                "messages": [
+                  {
+                    "text": {
+                      "text": ["Please provide your annual income as a number, for example '$75,000' or '60000'."]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "transitionRoutes": [
+    {
+      "condition": "$page.params.annual_income != null",
+      "targetPage": "Collect Employment",
+      "triggerFulfillment": {
+        "webhook": "loan-eligibility-webhook",
+        "tag": "validate_income"
+      }
+    }
+  ]
+}

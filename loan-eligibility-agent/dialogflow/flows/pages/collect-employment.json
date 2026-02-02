@@ -1,0 +1,40 @@
+{
+  "displayName": "Collect Employment",
+  "entryFulfillment": {
+    "messages": [
+      {
+        "text": {
+          "text": [
+            "Thank you. What is your current employment status?\n\n• Employed (full-time or part-time)\n• Self-employed\n• Retired\n• Student\n• Currently not employed"
+          ]
+        }
+      }
+    ]
+  },
+  "form": {
+    "parameters": [
+      {
+        "displayName": "employment_status",
+        "entityType": "@employment_status",
+        "required": true,
+        "fillBehavior": {
+          "initialPromptFulfillment": {
+            "messages": [
+              {
+                "text": {
+                  "text": ["Please select your employment status."]
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "transitionRoutes": [
+    {
+      "condition": "$page.params.employment_status != null",
+      "targetPage": "Collect Credit Score"
+    }
+  ]
+}

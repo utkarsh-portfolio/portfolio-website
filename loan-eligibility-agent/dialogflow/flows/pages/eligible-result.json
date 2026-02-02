@@ -1,0 +1,28 @@
+{
+  "displayName": "Eligible Result",
+  "entryFulfillment": {
+    "messages": [
+      {
+        "text": {
+          "text": [
+            "🎉 **Great news!**\n\nBased on your information, you pre-qualify for a $session.params.loan_type loan!\n\n**Your Pre-Approved Offer:**\n• Amount: Up to $session.params.approved_amount\n• Estimated Rate: $session.params.estimated_rate%\n• Estimated Monthly Payment: $session.params.monthly_payment\n\n**Next Steps:**\n1. Complete the full application\n2. Gather required documentation\n3. Schedule an appointment with a loan officer\n\n*This is a pre-qualification and not a final loan offer. Final approval is subject to verification of information provided.*\n\nWould you like to proceed with the full application, or do you have any questions?"
+          ]
+        }
+      }
+    ]
+  },
+  "transitionRoutes": [
+    {
+      "intent": "proceed.application",
+      "targetPage": "Application Redirect"
+    },
+    {
+      "intent": "ask.question",
+      "targetPage": "FAQ Handler"
+    },
+    {
+      "intent": "request.human.agent",
+      "targetPage": "Human Handoff"
+    }
+  ]
+}

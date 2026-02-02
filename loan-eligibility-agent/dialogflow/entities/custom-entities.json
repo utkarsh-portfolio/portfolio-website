@@ -1,0 +1,78 @@
+{
+  "entities": [
+    {
+      "displayName": "loan_type",
+      "kind": "KIND_MAP",
+      "entities": [
+        {
+          "value": "personal",
+          "synonyms": ["personal loan", "personal", "unsecured loan"]
+        },
+        {
+          "value": "home",
+          "synonyms": ["home loan", "mortgage", "home mortgage", "house loan", "housing loan"]
+        },
+        {
+          "value": "auto",
+          "synonyms": ["auto loan", "car loan", "vehicle loan", "auto financing", "car financing"]
+        },
+        {
+          "value": "business",
+          "synonyms": ["business loan", "commercial loan", "small business loan", "business financing"]
+        },
+        {
+          "value": "education",
+          "synonyms": ["education loan", "student loan", "college loan", "tuition loan", "study loan"]
+        }
+      ]
+    },
+    {
+      "displayName": "employment_status",
+      "kind": "KIND_MAP",
+      "entities": [
+        {
+          "value": "employed",
+          "synonyms": ["employed", "working", "have a job", "full-time", "part-time", "I work"]
+        },
+        {
+          "value": "self_employed",
+          "synonyms": ["self-employed", "self employed", "own business", "freelance", "freelancer", "contractor", "business owner"]
+        },
+        {
+          "value": "unemployed",
+          "synonyms": ["unemployed", "not working", "between jobs", "looking for work", "jobless"]
+        },
+        {
+          "value": "retired",
+          "synonyms": ["retired", "retirement", "I'm retired", "no longer working"]
+        },
+        {
+          "value": "student",
+          "synonyms": ["student", "studying", "in school", "college student", "university student", "full-time student"]
+        }
+      ]
+    },
+    {
+      "displayName": "credit_score_range",
+      "kind": "KIND_MAP",
+      "entities": [
+        {
+          "value": "excellent",
+          "synonyms": ["excellent", "very good", "great credit", "800", "above 750"]
+        },
+        {
+          "value": "good",
+          "synonyms": ["good", "decent", "pretty good", "700s"]
+        },
+        {
+          "value": "fair",
+          "synonyms": ["fair", "okay", "average", "mid 600s"]
+        },
+        {
+          "value": "poor",
+          "synonyms": ["poor", "bad", "low", "below 600", "needs work"]
+        }
+      ]
+    }
+  ]
+}

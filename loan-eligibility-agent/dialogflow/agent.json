@@ -1,0 +1,20 @@
+{
+  "displayName": "Loan Eligibility Agent",
+  "defaultLanguageCode": "en",
+  "timeZone": "America/New_York",
+  "description": "Conversational agent for loan pre-qualification in financial services",
+  "avatarUri": "",
+  "speechToTextSettings": {
+    "enableSpeechAdaptation": true
+  },
+  "startFlow": "Default Start Flow",
+  "securitySettings": "",
+  "enableStackdriverLogging": true,
+  "enableSpellCorrection": true,
+  "advancedSettings": {
+    "loggingSettings": {
+      "enableStackdriverLogging": true,
+      "enableInteractionLogging": true
+    }
+  }
+}

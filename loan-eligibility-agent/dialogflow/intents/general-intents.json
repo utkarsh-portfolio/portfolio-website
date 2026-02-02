@@ -1,0 +1,168 @@
+{
+  "intents": [
+    {
+      "displayName": "confirmation.yes",
+      "trainingPhrases": [
+        "yes",
+        "correct",
+        "that's right",
+        "confirm",
+        "looks good",
+        "yep",
+        "yeah",
+        "yes please",
+        "that's correct",
+        "everything is correct",
+        "all good",
+        "confirmed"
+      ]
+    },
+    {
+      "displayName": "confirmation.no",
+      "trainingPhrases": [
+        "no",
+        "wrong",
+        "incorrect",
+        "that's wrong",
+        "not right",
+        "nope",
+        "no that's not correct",
+        "I need to change something",
+        "let me fix that"
+      ]
+    },
+    {
+      "displayName": "request.human.agent",
+      "trainingPhrases": [
+        "talk to a human",
+        "speak to someone",
+        "real person",
+        "human agent",
+        "representative",
+        "talk to agent",
+        "speak with representative",
+        "I want to talk to a person",
+        "connect me with someone",
+        "can I speak to a human",
+        "live agent",
+        "customer service"
+      ]
+    },
+    {
+      "displayName": "credit.score.unknown",
+      "trainingPhrases": [
+        "I don't know",
+        "not sure",
+        "I don't know my credit score",
+        "no idea",
+        "I haven't checked",
+        "unknown",
+        "I'm not sure",
+        "don't remember",
+        "haven't checked recently"
+      ]
+    },
+    {
+      "displayName": "debt.none",
+      "trainingPhrases": [
+        "none",
+        "no debt",
+        "I don't have any debt",
+        "zero",
+        "0",
+        "nothing",
+        "I have no debt",
+        "debt free",
+        "no loans"
+      ]
+    },
+    {
+      "displayName": "proceed.application",
+      "trainingPhrases": [
+        "yes proceed",
+        "let's do it",
+        "I want to apply",
+        "proceed with application",
+        "start the application",
+        "let's proceed",
+        "I'm ready to apply",
+        "continue with application"
+      ]
+    },
+    {
+      "displayName": "ask.question",
+      "trainingPhrases": [
+        "I have a question",
+        "can I ask something",
+        "what about",
+        "I'm wondering",
+        "can you explain",
+        "tell me more",
+        "what does that mean",
+        "I don't understand"
+      ]
+    },
+    {
+      "displayName": "improve.eligibility",
+      "trainingPhrases": [
+        "how can I improve",
+        "what can I do to qualify",
+        "how to improve my chances",
+        "tips to improve eligibility",
+        "what should I do",
+        "how to get approved"
+      ]
+    },
+    {
+      "displayName": "explore.alternatives",
+      "trainingPhrases": [
+        "what are my options",
+        "other options",
+        "alternatives",
+        "what else can I do",
+        "other loan types",
+        "different options"
+      ]
+    },
+    {
+      "displayName": "select.callback",
+      "trainingPhrases": [
+        "callback",
+        "call me back",
+        "schedule a call",
+        "I want a callback",
+        "please call me"
+      ]
+    },
+    {
+      "displayName": "select.live.chat",
+      "trainingPhrases": [
+        "live chat",
+        "chat now",
+        "talk now",
+        "connect me now",
+        "live agent please"
+      ]
+    },
+    {
+      "displayName": "select.branch",
+      "trainingPhrases": [
+        "find a branch",
+        "visit branch",
+        "nearest location",
+        "branch location",
+        "I'll visit a branch"
+      ]
+    },
+    {
+      "displayName": "return.to.bot",
+      "trainingPhrases": [
+        "never mind",
+        "go back",
+        "continue with bot",
+        "I'll stay with you",
+        "cancel"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "displayName": "Confirm Details",
+  "entryFulfillment": {
+    "messages": [
+      {
+        "text": {
+          "text": [
+            "Thank you for providing that information. Let me confirm what I have:\n\n**Loan Request:**\n• Type: $session.params.loan_type\n• Amount: $session.params.loan_amount\n\n**Your Financial Profile:**\n• Annual Income: $session.params.annual_income\n• Employment: $session.params.employment_status\n• Credit Score: $session.params.credit_score\n• Existing Debt: $session.params.existing_debt\n\nIs this information correct?"
+          ]
+        }
+      }
+    ],
+    "conditionalCases": [
+      {
+        "cases": [
+          {
+            "condition": "$session.params.credit_score = 'unknown'",
+            "caseContent": [
+              {
+                "message": {
+                  "text": {
+                    "text": ["Note: We'll use an estimated credit score for this pre-qualification."]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "transitionRoutes": [
+    {
+      "intent": "confirmation.yes",
+      "targetPage": "Check Eligibility"
+    },
+    {
+      "intent": "confirmation.no",
+      "targetPage": "Correction Handler"
+    }
+  ]
+}

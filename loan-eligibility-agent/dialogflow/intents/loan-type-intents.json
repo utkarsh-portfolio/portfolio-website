@@ -1,0 +1,109 @@
+{
+  "intents": [
+    {
+      "displayName": "loan.type.personal",
+      "trainingPhrases": [
+        "personal loan",
+        "I need a personal loan",
+        "I want a personal loan",
+        "interested in personal loan",
+        "personal",
+        "I'd like a personal loan",
+        "looking for a personal loan",
+        "need money for personal use"
+      ],
+      "parameters": [
+        {
+          "id": "loan_type",
+          "entityType": "@loan_type",
+          "value": "personal"
+        }
+      ]
+    },
+    {
+      "displayName": "loan.type.home",
+      "trainingPhrases": [
+        "home loan",
+        "mortgage",
+        "I want to buy a house",
+        "I need a mortgage",
+        "home mortgage",
+        "house loan",
+        "I want a home loan",
+        "interested in mortgage",
+        "refinance my home",
+        "home refinance",
+        "buy a home"
+      ],
+      "parameters": [
+        {
+          "id": "loan_type",
+          "entityType": "@loan_type",
+          "value": "home"
+        }
+      ]
+    },
+    {
+      "displayName": "loan.type.auto",
+      "trainingPhrases": [
+        "auto loan",
+        "car loan",
+        "I want to buy a car",
+        "vehicle loan",
+        "I need a car loan",
+        "auto financing",
+        "car financing",
+        "buy a car",
+        "new car loan",
+        "used car loan"
+      ],
+      "parameters": [
+        {
+          "id": "loan_type",
+          "entityType": "@loan_type",
+          "value": "auto"
+        }
+      ]
+    },
+    {
+      "displayName": "loan.type.business",
+      "trainingPhrases": [
+        "business loan",
+        "small business loan",
+        "I need funding for my business",
+        "business financing",
+        "commercial loan",
+        "startup loan",
+        "business line of credit",
+        "expand my business"
+      ],
+      "parameters": [
+        {
+          "id": "loan_type",
+          "entityType": "@loan_type",
+          "value": "business"
+        }
+      ]
+    },
+    {
+      "displayName": "loan.type.education",
+      "trainingPhrases": [
+        "education loan",
+        "student loan",
+        "I need money for school",
+        "college loan",
+        "university loan",
+        "tuition loan",
+        "pay for education",
+        "study loan"
+      ],
+      "parameters": [
+        {
+          "id": "loan_type",
+          "entityType": "@loan_type",
+          "value": "education"
+        }
+      ]
+    }
+  ]
+}

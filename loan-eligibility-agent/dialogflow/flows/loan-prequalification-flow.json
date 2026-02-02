@@ -1,0 +1,41 @@
+{
+  "displayName": "Loan Pre-qualification Flow",
+  "description": "Main flow for loan eligibility assessment",
+  "transitionRoutes": [
+    {
+      "condition": "$session.params.loan_type != null AND $session.params.loan_amount != null AND $session.params.annual_income != null",
+      "targetPage": "Confirm Details"
+    }
+  ],
+  "eventHandlers": [
+    {
+      "event": "sys.no-match-1",
+      "triggerFulfillment": {
+        "messages": [
+          {
+            "text": {
+              "text": ["I didn't quite catch that. Could you please rephrase?"]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event": "sys.no-input-1",
+      "triggerFulfillment": {
+        "messages": [
+          {
+            "text": {
+              "text": ["Are you still there? I'm here to help with your loan pre-qualification."]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.3,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC"
+  }
+}

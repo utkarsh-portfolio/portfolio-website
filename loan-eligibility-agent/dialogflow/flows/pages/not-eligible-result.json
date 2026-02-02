@@ -1,0 +1,30 @@
+{
+  "displayName": "Not Eligible Result",
+  "entryFulfillment": {
+    "messages": [
+      {
+        "text": {
+          "text": [
+            "Thank you for your interest in our loan products.\n\nBased on our current lending criteria, we're unable to pre-qualify you for this loan at this time.\n\n**Factors that may have affected this decision:**\n• Credit score requirements\n• Debt-to-income ratio\n• Income requirements\n\n**What you can do:**\n1. Review and improve factors affecting eligibility\n2. Consider a co-signer for the application\n3. Explore alternative loan options\n4. Speak with a loan specialist for personalized guidance\n\nWe understand this may not be the news you were hoping for. Would you like to:\n• Learn more about improving your eligibility\n• Explore alternative options\n• Speak with a loan specialist"
+          ]
+        }
+      }
+    ],
+    "webhook": "loan-eligibility-webhook",
+    "tag": "explain_rejection"
+  },
+  "transitionRoutes": [
+    {
+      "intent": "improve.eligibility",
+      "targetPage": "Improvement Tips"
+    },
+    {
+      "intent": "explore.alternatives",
+      "targetPage": "Alternative Options"
+    },
+    {
+      "intent": "request.human.agent",
+      "targetPage": "Human Handoff"
+    }
+  ]
+}

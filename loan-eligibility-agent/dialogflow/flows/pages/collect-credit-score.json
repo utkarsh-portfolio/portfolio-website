@@ -1,0 +1,58 @@
+{
+  "displayName": "Collect Credit Score",
+  "entryFulfillment": {
+    "messages": [
+      {
+        "text": {
+          "text": [
+            "Do you know your approximate credit score?\n\nIf you're not sure, that's okay - you can say 'I don't know' and we'll estimate.\n\nCredit scores typically range from 300 to 850:\n• Excellent: 750+\n• Good: 700-749\n• Fair: 650-699\n• Needs improvement: Below 650"
+          ]
+        }
+      }
+    ]
+  },
+  "form": {
+    "parameters": [
+      {
+        "displayName": "credit_score",
+        "entityType": "@sys.number",
+        "required": false,
+        "fillBehavior": {
+          "initialPromptFulfillment": {
+            "messages": [
+              {
+                "text": {
+                  "text": ["What is your credit score? (Or say 'I don't know')"]
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "transitionRoutes": [
+    {
+      "intent": "credit.score.unknown",
+      "targetPage": "Collect Debt",
+      "triggerFulfillment": {
+        "setParameterActions": [
+          {
+            "parameter": "credit_score",
+            "value": "unknown"
+          }
+        ],
+        "webhook": "loan-eligibility-webhook",
+        "tag": "validate_credit_score"
+      }
+    },
+    {
+      "condition": "$page.params.credit_score != null",
+      "targetPage": "Collect Debt",
+      "triggerFulfillment": {
+        "webhook": "loan-eligibility-webhook",
+        "tag": "validate_credit_score"
+      }
+    }
+  ]
+}

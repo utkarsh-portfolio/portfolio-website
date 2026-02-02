@@ -1,0 +1,34 @@
+{
+  "displayName": "Human Handoff",
+  "entryFulfillment": {
+    "messages": [
+      {
+        "text": {
+          "text": [
+            "I'd be happy to connect you with one of our loan specialists who can provide personalized assistance.\n\n**Available Options:**\n\n1. **Schedule a Callback**\n   A specialist will call you at your preferred time\n   \n2. **Live Chat**\n   Connect with an agent now\n   Available: Mon-Fri 8am-8pm, Sat 9am-5pm EST\n   \n3. **Visit a Branch**\n   Find your nearest location\n\nWhich option would you prefer?"
+          ]
+        }
+      }
+    ],
+    "webhook": "loan-eligibility-webhook",
+    "tag": "human_handoff"
+  },
+  "transitionRoutes": [
+    {
+      "intent": "select.callback",
+      "targetPage": "Schedule Callback"
+    },
+    {
+      "intent": "select.live.chat",
+      "targetPage": "Live Agent Transfer"
+    },
+    {
+      "intent": "select.branch",
+      "targetPage": "Branch Locator"
+    },
+    {
+      "intent": "return.to.bot",
+      "targetPage": "Welcome"
+    }
+  ]
+}
