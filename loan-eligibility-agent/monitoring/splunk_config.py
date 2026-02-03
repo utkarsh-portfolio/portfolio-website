@@ -9,7 +9,15 @@ import aiohttp
 from typing import Dict, Any, Optional
 from datetime import datetime
 
-from ..backend.app.core.config import settings
+import os
+
+# Configuration can be loaded from environment variables when used standalone
+class SplunkSettings:
+    """Splunk configuration settings."""
+    SPLUNK_HEC_URL = os.getenv("SPLUNK_HEC_URL")
+    SPLUNK_HEC_TOKEN = os.getenv("SPLUNK_HEC_TOKEN")
+
+settings = SplunkSettings()
 
 logger = logging.getLogger(__name__)
 
